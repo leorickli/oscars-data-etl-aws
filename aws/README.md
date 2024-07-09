@@ -1,5 +1,7 @@
 ## Approach
 
+<img width="695" alt="image" src="https://github.com/leorickli/oscars-data-etl-aws/assets/106999054/89c6e367-4b08-4482-bcd1-2b4154488b35">
+
 This section of the project involves migrating the architecture implemented on-premises to the cloud. Given the small size of the date, there are much more cost-efficient approaches like ingesting data using Lambda, clean it completely and query it through Athena, but I wanted to use Glue because it's a much more mature way of dealing with data by using it's data catalog and better options for processing data by the use of Jupyter notebooks with Spark.
 
 Of course, Redshift is kind of overkill in this situation too, Athena would be fine for analysis, but again, my intention here is to create a more "big data"-focused architecture.
@@ -20,6 +22,9 @@ Increase the timeout of the function to at least 3 minutes so you don't get time
 *IAM Policies*: AmazonS3FullAccess, AWSLambdaBasicExecutionRole.
 
 ### 2. Transform and Load with Glue
+
+<img width="973" alt="SCR-20240709-brnq" src="https://github.com/leorickli/oscars-data-etl-aws/assets/106999054/729897ed-fae5-4c75-a195-9520cfda9b3d">
+
 The hardest part of the project, not because of Glue, but because of the connections required for the other resources. This is the series of steps I took to successfully get data from the bronze layer in the S3 bucket to Redshift for analysis:
 
 1. Create a crawler to get and catalog the data from the bronze layer, we will use the data from this catalog as a starting point for our Jupyter notebook.
@@ -45,4 +50,6 @@ The hardest part of the project, not because of Glue, but because of the connect
 ```
 ### 3. Analysis
 
-Once the data is inside Redshift, it's ready for some robust SQL analysis
+Once the data is inside Redshift, it's ready for some robust SQL analysis.
+
+<img width="1371" alt="SCR-20240709-btet" src="https://github.com/leorickli/oscars-data-etl-aws/assets/106999054/8b3cd002-da36-43f4-866c-579c5910d69e">
