@@ -1,7 +1,5 @@
 # README.md
 
-## Overview
-
 This project contains code to fetch and process film data, including budget conversion to USD. The code fetches data from a specified URL, extracts and cleans necessary information, and converts budget values to USD. The final data is saved in a CSV file.
 
 ## Requirements
@@ -41,7 +39,7 @@ pip install pandas requests
 3. **Run the code:**
 
     - Ensure the URL for fetching JSON data is set correctly in the code.
-    - Make sure to replace `'your_api_key_here'` with your actual API key for the exchange rate API.
+    - Make sure to replace `'your_api_key_here'` with your actual API key for the [exchange rate API](https://www.exchangerate-api.com/).
     - Run the script to fetch, process, and convert the budget data:
 
 ## Example Usage
