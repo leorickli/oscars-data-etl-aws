@@ -8,7 +8,7 @@ This project involves extracting and processing data about Oscar-nominated films
 
 - pandas: Used for data manipulation and analysis.
 - requests: Used for making HTTP requests to fetch data from the web.
-- r`: Used for regular expression operations to clean and extract specific patterns in strings.
+- re: Used for regular expression operations to clean and extract specific patterns in strings.
 
 ### 2. Extract
 Extraction was pretty straight forward. When the word "scraping" appeared in the challenge, my first thought was thinking about Scrapy, my favorite web-scraping tool. In the end it was just a simple request made via HTTP to a website. Anyway, I like to raise an exception on http requests, even a simple one like this might break someday.
