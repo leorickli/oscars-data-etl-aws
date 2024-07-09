@@ -52,4 +52,5 @@ The hardest part of the project, not because of Glue, but because of the connect
 
 Once the data is inside Redshift, it's ready for some robust SQL analysis.
 
-<img width="1371" alt="SCR-20240709-btet" src="https://github.com/leorickli/oscars-data-etl-aws/assets/106999054/8b3cd002-da36-43f4-866c-579c5910d69e">
+<img width="1374" alt="SCR-20240709-ciad" src="https://github.com/leorickli/oscars-data-etl-aws/assets/106999054/66e0e4c7-823c-4955-9a8f-7a8092cdb664">
+
