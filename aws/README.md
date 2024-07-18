@@ -8,7 +8,7 @@ Of course, Redshift is kind of overkill in this situation too, Athena would be f
 
 Always assume the principle of least-privilege, you will see many times in this project a role like "AmazonS3FullAccess", this is not recommended in professional solutions. One should never have access to the full features of a service, unless this person is the admin.
 
-### 1. Extract with Lambda
+### 1. [Extract with Lambda](https://github.com/leorickli/oscars-data-etl-aws/blob/main/aws/extract.py)
 Lambda (and FaaS (Function-as-a-Service) tools like Cloud SQL and Azure Functions) is the go-to ingestion tool for periodically (daily or hourly) ingestion of data, perfect for ingesting data from APIs through HTTP requests. This is why it was used here, although not quite friendly with the "requests" library, "urllib3" ended up being a more mature and viable solution for Lambda.
 
 On the cloud, it's nice to use the "medallion architecture", I tried to apply this principle by writing data into the bronze (raw) layer, where the data should be written "as-is". I actually transform every data type to string so I can further process it better in the next layers.
@@ -21,7 +21,7 @@ Increase the timeout of the function to at least 3 minutes so you don't get time
 
 *IAM Policies*: AmazonS3FullAccess, AWSLambdaBasicExecutionRole.
 
-### 2. Transform and Load with Glue
+### 2. [Transform and Load with Glue](https://github.com/leorickli/oscars-data-etl-aws/blob/main/aws/transform_and_load.ipynb)
 
 <img width="973" alt="SCR-20240709-brnq" src="https://github.com/leorickli/oscars-data-etl-aws/assets/106999054/729897ed-fae5-4c75-a195-9520cfda9b3d">
 
